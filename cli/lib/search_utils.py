@@ -9,9 +9,14 @@ def load_dataset():
     with open(file_path,"r") as f:
         data= json.load(f)
 
+    movie_names= []
     for i in data:
         for j in range(len(data[i])):
             value = data[i]
-            print(f"{j}. {value[j]["title"]}")
+            # print(f"{j}. {value[j]["title"]}")
+            movie_names.append(value)
+            # if j==5:
+            #     break
+    return movie_names
 
 load_dataset()
