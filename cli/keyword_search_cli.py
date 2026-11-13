@@ -1,8 +1,7 @@
 import argparse
 
+from lib.keyword_search import search_logic
 from lib.search_utils import load_dataset
-
-from cli.lib.keyword_search import search_logic
 
 
 def main() -> None:
@@ -16,9 +15,12 @@ def main() -> None:
 
     match args.command:
         case "search":
-            print(f"Searching for: {search_parser}")
-            movie_names = load_dataset
-            search_logic(movie_names, search_parser)
+            # print(f"Searching for: {search_parser}")
+            movie_names = load_dataset()
+            print(movie_names)
+            results = search_logic(args.query,5)
+            print(results)
+            # search_logic(, movie_names)
 
             # print the search query here
         case _:
