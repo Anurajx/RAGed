@@ -16,10 +16,12 @@ def main() -> None:
     match args.command:
         case "search":
             # print(f"Searching for: {search_parser}")
-            movie_names = load_dataset()
-            print(movie_names)
+            # movie_names = load_dataset()
+            # print(movie_names)
             results = search_logic(args.query,5)
-            print(results)
+            print("RESULTS OF SEARCH ARE -> ")
+            for i in range(len(results)):
+                print(f"{i+1} - {results[i]}")
             # search_logic(, movie_names)
 
             # print the search query here
