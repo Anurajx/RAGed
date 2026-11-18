@@ -7,7 +7,7 @@ def search_logic(query , limit):
     # print(f"DATASET {dataset}")
     result = []
     for movie in dataset:
-        if query in movie["title"].lower():
+        if query.lower() in movie["title"].lower():
             # print(movie["title"])
             result.append(movie["title"])
 
